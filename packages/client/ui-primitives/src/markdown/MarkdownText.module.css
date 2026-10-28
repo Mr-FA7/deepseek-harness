@@ -7,6 +7,7 @@
   overflow-wrap: anywhere;
   font: var(--dsw-font-markdown-base);
   color: var(--dsw-alias-label-primary);
+  text-align: start;
 }
 
 .markdown strong {
@@ -103,12 +104,12 @@
   width: 1.1em;
   height: 1.1em;
   vertical-align: -0.25em;
-  margin-right: 5px;
+  margin-inline-end: 5px;
 }
 
 .markdown :where(ul, ol) {
   margin: 16px 0;
-  padding-left: 18px;
+  padding-inline-start: 18px;
 }
 
 .markdown li:not(:first-child) {
@@ -127,7 +128,7 @@
 /* Nested ol under ul/ol: markers inside (models sometimes emit this shape). */
 .markdown :where(ul, ol) ol {
   list-style-position: inside;
-  padding-left: 0;
+  padding-inline-start: 0;
 }
 
 .markdown :where(ul, ol) ol li p {
@@ -156,18 +157,22 @@
 }
 
 .markdown blockquote {
-  border-left: 2px solid var(--dsw-alias-label-caption);
+  border-inline-start: 2px solid var(--dsw-alias-label-caption);
   margin: 16px 0 0;
-  padding-left: 14px;
+  padding-inline-start: 14px;
 }
 
 .markdown pre {
   margin: 16px 0;
   font-family: var(--ds-font-family-code);
   overflow: auto;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 .markdown :not(pre) > code {
+  direction: ltr;
+  unicode-bidi: isolate;
   display: inline-flex;
   align-items: center;
   box-sizing: border-box;

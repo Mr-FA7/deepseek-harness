@@ -45,3 +45,8 @@ export const ru = {
 export const pt = {
   'quote.add': 'Citação de texto',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'quote.add': 'Quote text',
+} satisfies Record<keyof typeof en, string>

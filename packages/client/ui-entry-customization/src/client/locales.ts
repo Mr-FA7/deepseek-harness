@@ -69,3 +69,13 @@ export const pt = {
   'createPrompt.conversation': 'Crie um plug-in de visualização de conversa DSH.',
   'createPrompt.rightbar': 'Crie um plug-in DSH com uma entrada na barra lateral direita.',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  install: 'Browse other plugins',
+  create: 'Create your plugin',
+  'createPrompt.sidebar': 'Create a DSH plugin with a left sidebar entry.',
+  'createPrompt.conversation': 'Create a DSH conversation view plugin.',
+  'createPrompt.rightbar': 'Create a DSH plugin with a right sidebar entry.',
+
+} satisfies Record<keyof typeof en, string>

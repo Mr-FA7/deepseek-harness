@@ -161,3 +161,22 @@ export const pt = {
   saveFailed: 'A implantação não aceitou esses valores; eles foram deixados para você corrigir.',
   invalidNumber: 'Insira um número ou deixe em branco para usar o padrão.',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  title: 'Shell',
+  description: 'Limit how long each command may run and how much it may output.',
+  timeoutMs: 'Command timeout (ms)',
+  timeoutMsHint: 'How long one command may run before it is terminated.',
+  maxOutputBytes: 'Output cap per stream (bytes)',
+  maxOutputBytesHint: 'Output beyond this spills to a temporary file rather than being lost.',
+  overridden: 'Overridden',
+  reset: 'Reset to default',
+  readOnly: 'This deployment stores settings read-only.',
+  unavailable: 'This plugin is not loaded, so it cannot be configured right now.',
+  save: 'ذخیره',
+  saving: 'Saving…',
+  saveFailed: 'The deployment did not accept these values; they were left for you to correct.',
+  invalidNumber: 'Enter a number, or leave blank to use the default.',
+
+} satisfies Record<keyof typeof en, string>

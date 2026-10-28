@@ -110,3 +110,17 @@ export const pt = {
   'crumbs.aria': 'Navegação de pastas',
   'suggestions.aria': 'Sugestões de gatilho',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'command': 'دستورها',
+  'skill': 'Skills',
+  'subagent': 'Subagents',
+  'loading': 'در حال بارگذاری…',
+  'drill.aria': 'Browse folder',
+  'drill.hint': 'Browse folder',
+  'drill.key': 'Tab',
+  'crumbs.aria': 'Folder navigation',
+  'suggestions.aria': 'Trigger suggestions',
+
+} satisfies Record<keyof typeof en, string>

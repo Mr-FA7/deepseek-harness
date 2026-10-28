@@ -179,7 +179,10 @@
   /* Docked floor: one 24px line + 4px top pad = 28 content height; 36 leaves
      an 8px breath below the line (the hero keeps its own 52px floor below). */
   min-height: 36px;
-  padding: 4px 8px 0 14px;
+  padding-block: 4px 0;
+  padding-inline: 14px 8px;
+  unicode-bidi: plaintext;
+  text-align: start;
   font-family: var(--dsw-font-family);
   font-size: inherit;
   line-height: inherit;
@@ -196,6 +199,8 @@
    keeps the textarea's line rhythm. */
 .input p {
   margin: 0;
+  unicode-bidi: plaintext;
+  text-align: start;
 }
 
 /* Claim ghost hint as generated content after the last paragraph: the bar
@@ -225,7 +230,8 @@
    36px floor. */
 .placeholder {
   position: absolute;
-  inset: 4px 8px auto 14px;
+  inset-block: 4px auto;
+  inset-inline: 14px 8px;
   color: var(--dsw-alias-label-caption);
   white-space: nowrap;
   overflow: hidden;

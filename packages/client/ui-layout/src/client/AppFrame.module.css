@@ -32,7 +32,7 @@
 
 :global([data-windows-titlebar]) .centerCol {
   background: var(--dsw-alias-bg-base);
-  border-radius: var(--dsh-windows-content-radius) 0 0 0;
+  border-start-start-radius: var(--dsh-windows-content-radius);
   corner-shape: round;
 }
 
@@ -46,7 +46,7 @@
 }
 
 :global([data-windows-titlebar]) .sidebarCol {
-  border-right: none;
+  border-inline-end: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -59,7 +59,7 @@
   min-width: 0;
   overflow: hidden;
   background: var(--dsw-specific-sidebar-fill);
-  border-right: 0.5px solid var(--dsw-alias-border-l3);
+  border-inline-end: 0.5px solid var(--dsw-alias-border-l3);
 }
 
 .centerCol {
@@ -151,7 +151,7 @@
 
 :global([data-platform='darwin']) .centerCol {
   background: var(--dsw-alias-bg-base);
-  border-left: 0.5px solid var(--dsw-alias-border-l3);
+  border-inline-start: 0.5px solid var(--dsw-alias-border-l3);
 }
 
 /* The right track paints the base ground on the transparent frame: while the
@@ -166,7 +166,7 @@
 /* The darwin closed sidebar has no rail: the centre reaches the window edge,
    where a separator would draw a seam against nothing. */
 :global([data-platform='darwin']) [data-sidebar-collapsed] .centerCol {
-  border-left: none;
+  border-inline-start: none;
 }
 
 /* Published while the shell.leading seat is mounted (same condition as the

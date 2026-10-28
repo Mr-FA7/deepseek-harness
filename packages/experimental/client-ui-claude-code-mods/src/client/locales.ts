@@ -69,3 +69,12 @@ export const pt = {
   'press.failed': 'O botão falhou: {message}',
   'press.stale': 'Esse botão pertencia a um desenho anterior; a banda se atualizou',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  band: 'Claude Code mods',
+  pressing: 'Working…',
+  'press.failed': 'The button failed: {message}',
+  'press.stale': 'That button belonged to an earlier drawing; the band has refreshed',
+
+} satisfies Record<keyof typeof en, string>

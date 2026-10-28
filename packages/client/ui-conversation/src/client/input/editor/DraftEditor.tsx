@@ -39,6 +39,7 @@ export function DraftEditor({
         <ComposerContentEditable
           editor={workspaceTrigger ? null : editor}
           editable={editable}
+          dir="auto"
           className={clsx(css.input, editorDisabled && css.inputDisabled)}
           data-phase={phase}
           aria-disabled={editorDisabled || undefined}

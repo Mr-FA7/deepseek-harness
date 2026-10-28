@@ -80,3 +80,14 @@ export const pt: Record<ActionCardKey, string> = {
   'row.title': 'Cartão de ação', 'row.preparing': 'Preparando um cartão', 'row.running': 'Propondo',
   'row.ok': 'Proposto', 'row.error': 'Não exibido', 'row.stopped': 'Interrompido', 'row.inspect': 'Inspecionar chamada',
 }
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  expandBrief: 'Show more', collapseBrief: 'Show less',
+  dismiss: 'الان نه', dismissed: 'Dismissed', replaced: 'Replaced',
+  unavailable: 'This action is unavailable. Check the plugin in Plugins.',
+  transport: 'Could not confirm the result. Reconnect and check the card before retrying.',
+  'row.title': 'Action card', 'row.preparing': 'Preparing a card', 'row.running': 'Proposing',
+  'row.ok': 'Proposed', 'row.error': 'Not shown', 'row.stopped': 'Interrupted', 'row.inspect': 'Inspect call',
+
+} satisfies Record<keyof typeof en, string>

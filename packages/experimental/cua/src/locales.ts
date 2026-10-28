@@ -56,6 +56,12 @@ export const pt = {
   approve: 'Permitir nesta sessão',
 } satisfies Record<keyof typeof en, string>
 
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  question: 'به Computer Use اجازه می‌دهید این برنامه را اجرا، بخواند، اسکرین‌شات بگیرد و کنترل کند؟',
+  detail: 'اجازه یا رد برای همه نسخه‌ها و کپی‌هایی با همان هویت برنامه اعمال می‌شود. اجازه و رد نشست فقط در همین گفتگو معتبر است.',
+  approve: 'اجازه برای این نشست',
+} satisfies Record<keyof typeof en, string>
 /** Display translations resolved by the Client; wire choices stay unchanged. */
 export const applicationAccessDisplay = {
   question: {
@@ -67,8 +73,9 @@ export const applicationAccessDisplay = {
     de: de.question,
     ru: ru.question,
     pt: pt.question,
+    fa: fa.question,
   },
-  detail: { en: en.detail, zh: zh.detail, ja: ja.detail, es: es.detail, fr: fr.detail, de: de.detail, ru: ru.detail, pt: pt.detail },
+  detail: { en: en.detail, zh: zh.detail, ja: ja.detail, es: es.detail, fr: fr.detail, de: de.detail, ru: ru.detail, pt: pt.detail, fa: fa.detail },
   approve: {
     en: en.approve,
     zh: zh.approve,
@@ -78,5 +85,6 @@ export const applicationAccessDisplay = {
     de: de.approve,
     ru: ru.approve,
     pt: pt.approve,
+    fa: fa.approve,
   },
 }

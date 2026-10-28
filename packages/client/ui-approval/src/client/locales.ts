@@ -90,3 +90,15 @@ export const pt = {
   allowOnce: 'Permitir uma vez',
   allowAlways: 'Sempre permitir',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  waiting: 'منتظر تأیید',
+  'detail.aria': 'Approval details',
+  escalation: 'Tool {toolName} requests privileged execution',
+  reject: 'Reject',
+  allow: 'Allow',
+  allowOnce: 'Allow once',
+  allowAlways: 'Always allow',
+
+} satisfies Record<keyof typeof en, string>

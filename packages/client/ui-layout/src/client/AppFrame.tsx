@@ -224,11 +224,14 @@ export function AppFrame({
   const onDragEnd = useCallback(() => { setDragging(false) }, [])
   const onSidebarStart = useCallback(() => { sidebarBase.current = colsRef.current.sidebar; setDragging(true) }, [])
   const onSidebarDrag = useCallback((dx: number) => {
-    actions.setSidebar(sidebarBase.current + dx)
+    // RTL puts the sidebar on the physical right, so a rightward drag shrinks it.
+    const sign = document.documentElement.dir === 'rtl' ? -1 : 1
+    actions.setSidebar(sidebarBase.current + sign * dx)
   }, [actions])
   const onRightbarStart = useCallback(() => { rightbarBase.current = rightbarWidth.current; setDragging(true) }, [])
   const onRightbarDrag = useCallback((dx: number) => {
-    actions.setRightbar(rightbarBase.current - dx)
+    const sign = document.documentElement.dir === 'rtl' ? 1 : -1
+    actions.setRightbar(rightbarBase.current + sign * dx)
   }, [actions])
   const productTitle = process.env.DSH_CLIENT_TITLE ?? t('brand.localBuild')
   // The rendered template lets the grid solve the squeeze natively: the centre
@@ -298,9 +301,9 @@ export function AppFrame({
         </div>
       )}
       {/* The collapsed rail is fixed-width: no resize handle while closed. */}
-      {!sidebarCollapsed && <DragHandle side="sidebar" left={cols.sidebar} onStart={onSidebarStart} onDrag={onSidebarDrag} onEnd={onDragEnd} />}
+      {!sidebarCollapsed && <DragHandle side="sidebar" left={document.documentElement.dir === 'rtl' ? viewport - cols.sidebar : cols.sidebar} onStart={onSidebarStart} onDrag={onSidebarDrag} onEnd={onDragEnd} />}
       {layoutInfo.rightbarShown && !layoutInfo.rightbarFullscreen && normal.rightbar > 0 && (
-        <DragHandle side="rightbar" left={viewport - normal.rightbar} onStart={onRightbarStart} onDrag={onRightbarDrag} onEnd={onDragEnd} />
+        <DragHandle side="rightbar" left={document.documentElement.dir === 'rtl' ? normal.rightbar : viewport - normal.rightbar} onStart={onRightbarStart} onDrag={onRightbarDrag} onEnd={onDragEnd} />
       )}
     </div>
   )

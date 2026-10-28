@@ -62,3 +62,10 @@ export const pt = {
   'secret.reveal': 'Mostrar segredo',
   'secret.hide': 'Ocultar segredo',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'secret.reveal': 'Show secret',
+  'secret.hide': 'Hide secret',
+
+} satisfies Record<keyof typeof en, string>

@@ -188,3 +188,25 @@ export const pt = {
   'error.notDirectory': 'Isso não é um diretório.',
   'error.unavailable': 'Falha na leitura: {message}',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'shortcut.noSession': 'ابتدا یک جلسه انتخاب کنید',
+  'type.label': 'Files',
+  'guide.title': 'Workspace files',
+  'guide.description': 'Browse files in this session\'s workspace',
+  loading: 'Reading…',
+  empty: 'Empty directory',
+  truncated: 'Too many entries, showing only some of them.',
+  noWorkspace: 'This session has no workspace directory.',
+  reload: 'بارگذاری مجدد',
+  autoRefresh: 'Auto refresh',
+  'autoRefresh.enable': 'Enable auto refresh',
+  'autoRefresh.disable': 'Disable auto refresh',
+  'entry.other': 'Not a file or a directory, so it cannot be opened.',
+  'error.notFound': 'That directory is gone. It may have been moved or deleted.',
+  'error.outsideWorkspace': 'That directory is outside the workspace, so the sidebar will not read it.',
+  'error.notDirectory': 'That is not a directory.',
+  'error.unavailable': 'Read failed: {message}',
+
+} satisfies Record<keyof typeof en, string>

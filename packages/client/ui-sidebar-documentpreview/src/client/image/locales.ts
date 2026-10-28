@@ -89,3 +89,14 @@ export const pt = {
   failed: 'Esta imagem não pôde ser exibida.',
   unsupported: 'A visualização da imagem requer o conteúdo completo do arquivo.',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  ...zoomEn,
+  title: 'تصویر',
+  preview: 'Image preview: {name}',
+  loading: 'Rendering document...',
+  failed: 'This image could not be displayed.',
+  unsupported: 'Image preview requires the complete file contents.',
+
+} satisfies Record<keyof typeof en, string>

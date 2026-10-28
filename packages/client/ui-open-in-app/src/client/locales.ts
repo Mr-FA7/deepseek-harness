@@ -215,3 +215,26 @@ export const pt = {
   'app.filemanager': 'Arquivos',
   'app.terminal': 'Terminais',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'open.title': 'Open in {app}',
+  'path.appDefault': '{app} (default)',
+  'path.appsError': 'Could not load applications',
+  'shortcut.busy': 'Opening workspace',
+  'shortcut.unavailable': 'Current workspace or local application unavailable',
+  'open.tooltip': 'Open locally',
+  'path.open': 'Open',
+  'path.more': 'More ways to open',
+  'path.reveal': 'Show file location',
+  'path.opened': 'Opened on another device',
+  'path.revealed': 'File location shown on another device',
+  'path.openError': 'Could not open. Try again.',
+  'path.revealError': 'Could not show the file location. Try again.',
+  ...PRODUCT_NAMES,
+  'app.finder': 'Finder',
+  'app.explorer': 'File Explorer',
+  'app.filemanager': 'Files',
+  'app.terminal': 'Terminal',
+
+} satisfies Record<keyof typeof en, string>

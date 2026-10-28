@@ -152,3 +152,23 @@ export const pt = {
   busy: 'A visualização do Office está ocupada. Tente novamente em breve.',
   changed: 'O arquivo foi alterado durante a leitura. Reabra a visualização.',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  title: 'Office document',
+  loading: 'Rendering document...',
+  retry: 'تلاش دوباره',
+  viewMissingFonts: 'Missing fonts: {count}. Click to view.',
+  missingFontsTitle: 'Missing fonts',
+  missingFontsDescription: 'These fonts are unavailable for this preview. Text and layout may differ from the original document.',
+  missingFontsCount: 'Fonts: {count}',
+  closeDetails: 'Close font details',
+  unavailable: 'Office previews are unavailable. Enable the document preview service on the computer running DeepSeek Harness.',
+  invalid: 'This Office file cannot be previewed. It may be damaged, password protected, or have the wrong extension.',
+  tooLarge: 'The Office file or converted PDF exceeds the preview size limit. Reduce the file size or adjust the preview configuration.',
+  failed: 'Office conversion did not produce a usable PDF. Check the file and try again.',
+  timeout: 'Office conversion timed out. Try again.',
+  busy: 'Office preview is busy. Try again shortly.',
+  changed: 'The file changed while being read. Reopen the preview.',
+
+} satisfies Record<keyof typeof en, string>

@@ -226,3 +226,31 @@ export const pt = {
   'empty.models': 'Nenhum modelo disponível.',
   'empty.efforts': 'Este modelo não fornece níveis de esforço de raciocínio.',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'provider.account': 'حساب DeepSeek',
+  'command.label': 'مدل',
+  'command.description': 'مدل این گفتگو را انتخاب کنید',
+  'option.loadError': 'بارگذاری فهرست ناموفق بود: {message}',
+  'trigger.fallback': 'انتخاب مدل',
+  'trigger.loading': 'در حال بارگذاری مدل‌ها…',
+  'trigger.selectAria': 'انتخاب مدل',
+  'trigger.aria': 'انتخاب مدل، فعلی {model}',
+  'trigger.ariaEffort': 'انتخاب مدل، فعلی {model}، تلاش استدلال {effort}',
+  'menu.aria': 'مدل و تلاش استدلال',
+  'menu.model': 'مدل',
+  'menu.effort': 'تلاش',
+  'effort.providerDefault': 'پیش‌فرض',
+  'status.loading': 'در حال تازه‌سازی فهرست مدل‌ها…',
+  'error.action': 'عملیات مدل ناموفق بود: {message}',
+  'error.sessionInUse': 'این جلسه احتمالاً توسط نمونه دیگری از DSH در حال استفاده است. نمونه‌های دیگر را ببندید و دوباره تلاش کنید.',
+  'action.reload': 'بارگذاری مجدد',
+  'warning.groupLoad': 'بارگذاری {name} ناموفق بود: {message}',
+  'search.placeholder': 'جستجوی مدل‌ها…',
+  'search.clear': 'پاک کردن جستجو',
+  'search.empty': 'مدل منطبقی نیست.',
+  'empty.models': 'مدلی در دسترس نیست.',
+  'empty.efforts': 'این مدل سطح تلاش استدلال ندارد.',
+
+} satisfies Record<keyof typeof en, string>

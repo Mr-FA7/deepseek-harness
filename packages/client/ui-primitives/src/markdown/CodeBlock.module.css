@@ -2,6 +2,8 @@
    stay on the existing shiki `--shiki-*` sheet (not Prism highlight.css). */
 
 .block {
+  direction: ltr;
+  unicode-bidi: isolate;
   --dsl-code-block-banner-background-color: var(--dsw-alias-markdown-code-block-banner);
   --dsl-code-block-border-radius: var(--dsw-radius-lg);
   /* Local 11/18 instead of the shared --dsw-font-xs-13: the banner scales

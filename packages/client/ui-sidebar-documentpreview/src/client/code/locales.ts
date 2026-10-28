@@ -63,3 +63,11 @@ export const pt = {
   copy: 'Copiar',
   copied: 'Copiado',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  title: 'Code',
+  copy: 'کپی',
+  copied: 'کپی شد',
+
+} satisfies Record<keyof typeof en, string>

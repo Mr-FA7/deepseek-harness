@@ -51,7 +51,7 @@
   color: var(--dsw-alias-label-tertiary);
   transition: color 100ms ease;
   font: inherit;
-  text-align: left;
+  text-align: start;
 }
 
 /* The summary body flows uncapped with the page, so a long checkpoint summary

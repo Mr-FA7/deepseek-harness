@@ -304,3 +304,20 @@ export const accessPt = {
   'auto.confirm.acknowledge': 'Entendo esses riscos e quero continuar',
   'auto.confirm.enable': 'Ativar Auto review',
 } satisfies typeof accessEn
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'title': 'مجوز',
+  'description': 'Choose the default permission mode for new sessions',
+  'loading': 'Loading',
+  'unavailable': 'Unavailable',
+  'preset.readOnly': 'Read Only',
+  'preset.workspaceWrite': 'Workspace Write',
+  'preset.fullAccess': 'Full access',
+  'confirm.title': 'Enable Full access?',
+  'confirm.description': 'Full access lets new sessions reduce confirmation steps and perform more actions directly, including sensitive operations, file changes, or external commands. Only use it when you trust subsequent tasks.',
+  'confirm.acknowledge': 'I understand the risks and want to continue',
+  'confirm.cancel': 'لغو',
+  'confirm.enable': 'Enable Full access',
+
+} satisfies Record<keyof typeof en, string>

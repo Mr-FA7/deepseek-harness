@@ -156,7 +156,7 @@ describe('locale apply', () => {
     const { entry, instance, face } = faceOf(b.slots)
     // The inject-time re-sync sealed the init window: the mirror is current.
     expect(instance.getSnapshot().active).toBe('en')
-    expect(instance.getSnapshot().options.map(o => o.id).sort()).toEqual([...SHIPPED_LOCALE_IDS].sort())
+    expect(instance.getSnapshot().options.map(o => o.id).sort()).toEqual([...SHIPPED_LOCALE_IDS, 'fa'].sort())
     // Copy rides the standard locale seat: the entry declares the namespace.
     expect(entry.locale).toBe(SETTINGS_NS)
     expect(locale.bind(SETTINGS_NS)('language.title')).toBe('Language')
@@ -191,11 +191,12 @@ describe('locale apply', () => {
       { id: 'de', label: 'Deutsch' },
       { id: 'ru', label: 'Русский' },
       { id: 'pt', label: 'Português' },
+      { id: 'fa', label: 'فارسی' },
       { id: 'it', label: 'Italiano' },
     ])
 
     await languagePack.dispose()
-    expect(instance.getSnapshot().options.map(option => option.id)).toEqual(['zh', 'en', 'ja', 'es', 'fr', 'de', 'ru', 'pt'])
+    expect(instance.getSnapshot().options.map(option => option.id)).toEqual(['zh', 'en', 'ja', 'es', 'fr', 'de', 'ru', 'pt', 'fa'])
   })
 
   it.each([
@@ -205,6 +206,7 @@ describe('locale apply', () => {
     ['de', 'Deutsch', 'Sprache', 'Abbrechen'],
     ['ru', 'Русский', 'Язык', 'Отмена'],
     ['pt', 'Português', 'Idioma', 'Cancelar'],
+    ['fa', 'فارسی', 'زبان', 'لغو'],
   ])('restores %s from the Host and releases its language and dictionaries on unload', async (id, label, languageTitle, cancel) => {
     const b = await bench(id)
     onTestFinished(() => b.ctx.fiber.dispose())

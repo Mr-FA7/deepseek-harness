@@ -162,3 +162,24 @@ export const pt = {
   'chip.on.title': 'Modo de planejamento ativado – clique para desligar (/plan off)',
   'chip.exitFailed': 'Falha ao sair do modo de plano',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'chip.label': 'برنامه',
+  'preview.title': 'برنامه',
+  'preview.document': 'Plan · Markdown',
+  'preview.action': 'Open',
+  'preview.open': 'Open plan in sidebar',
+  'preview.full': 'View full plan',
+  'preview.openNamed': 'Open plan: {title}',
+  'preview.loading': 'Loading plan…',
+  'preview.failed': 'Could not load plan',
+  'preview.invalidAddress': 'Invalid plan address',
+  'preview.notFound': 'This plan was not found',
+  'preview.unavailable': 'Plan preview is unavailable',
+  'preview.expired': 'This temporary plan preview has expired. Reopen it from the pending review card.',
+  'chip.on.aria': 'Plan mode on, press to turn off',
+  'chip.on.title': 'Plan mode on — click to turn off (/plan off)',
+  'chip.exitFailed': 'Failed to exit plan mode',
+
+} satisfies Record<keyof typeof en, string>

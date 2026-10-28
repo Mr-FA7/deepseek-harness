@@ -9,7 +9,7 @@ kind: "package-reference"
 
 ## 概述
 
-使用 `dsh-client-locale` 可在 web GUI 中切换内置的英文、中文、日语、西班牙语、法语、德语、俄语和巴西葡萄牙语（`pt`，也匹配 `pt-PT` 浏览器请求）locale，或 client 插件添加的语言。用户选择会立即生效；每个已认证浏览器都通过 Host settings 服务把选择以 `locale.preference` 持久化到 `$DSH_HOME/cordis.patch.yml`。全新浏览器会使用浏览器请求的第一个受支持语言，直到 Host 读取送达已存储偏好。插件作者可添加类型化命名空间字典，并通过公开 locale API 翻译；经 slot 渲染的文案无需重新加载即可随语言切换更新。
+使用 `dsh-client-locale` 可在 web GUI 中切换内置的英文、中文、日语、西班牙语、法语、德语、俄语、巴西葡萄牙语（`pt`，也匹配 `pt-PT` 浏览器请求）和波斯语（`fa`，从右到左）locale，或 client 插件添加的语言。用户选择会立即生效；每个已认证浏览器都通过 Host settings 服务把选择以 `locale.preference` 持久化到 `$DSH_HOME/cordis.patch.yml`。全新浏览器会使用浏览器请求的第一个受支持语言，直到 Host 读取送达已存储偏好。插件作者可添加类型化命名空间字典，并通过公开 locale API 翻译；经 slot 渲染的文案无需重新加载即可随语言切换更新。
 
 ## 目录
 
@@ -137,7 +137,7 @@ export function apply(ctx) {
 这些限制说明本地化在哪些地方不完整，或在注册时被冻结。它们是当前包约束，不是待办事项清单。
 
 - **注册表持有的文本只读取一次翻译**——在 slot 渲染路径之外于注册时捕获的文案（例如 command 注册表中的 `/model` 命令描述）在重新注册前保持注册时的语言；slot 渲染的文案随切换实时更新。
-- **语言包负责语言特有行为**——注册表提供选择、持久化、浏览器匹配、逐键回退和 `<html lang>`；它不增加复数规则或双向布局。
+- **语言包负责语言特有行为**——注册表提供选择、持久化、浏览器匹配、逐键回退、`<html lang>`，以及波斯语等 RTL 语言的 `<html dir>`；它不增加复数规则。
 
 <a id="dev-note"></a>
 ### 开发备注

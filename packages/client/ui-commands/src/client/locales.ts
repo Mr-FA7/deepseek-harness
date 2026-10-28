@@ -263,3 +263,36 @@ export const pt = {
   'listbox.aria': '/{command} correspondências',
   'notice.attachmentsUnsupported': '/{command} não aceita anexos; remova-os primeiro',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'section.add': 'افزودن',
+  'section.commands': 'دستورها',
+  'label.goal': 'هدف',
+  'label.plan': 'برنامه',
+  'label.feedback': 'بازخورد',
+  'label.compact': 'فشرده',
+  'label.permission': 'مجوز',
+  'label.export': 'خروجی',
+  'description.goal': 'هدف یک کار طولانی را تنظیم یا مشاهده کنید',
+  'description.plan': 'ورود یا خروج از حالت برنامه',
+  'description.feedback': 'ثبت بازخورد درباره این جلسه',
+  'description.compact': 'فشرده‌سازی تاریخچه قدیمی گفتگو',
+  'description.permission': 'تغییر پیش‌تنظیم مجوز (حالت سندباکس + سیاست تأیید)',
+  'description.export': 'دانلود لاگ این جلسه به‌صورت ZIP',
+  'token.goal': 'هدف',
+  'token.plan': 'برنامه',
+  'token.feedback': 'بازخورد',
+  'token.compact': 'فشرده',
+  'token.permission': 'مجوز',
+  'token.export': 'خروجی',
+  'search.placeholder': 'جستجو…',
+  'search.aria': 'فیلتر گزینه‌ها',
+  'status.loading': 'در حال بارگذاری گزینه‌ها…',
+  'status.applying': 'در حال اعمال…',
+  'status.empty': 'گزینه‌ای نیست',
+  'overlay.aria': 'گزینه‌های /{command}',
+  'listbox.aria': 'نتایج /{command}',
+  'notice.attachmentsUnsupported': '/{command} پیوست نمی‌پذیرد؛ ابتدا آن‌ها را حذف کنید',
+
+} satisfies Record<keyof typeof en, string>

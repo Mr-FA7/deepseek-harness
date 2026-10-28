@@ -232,3 +232,33 @@ export const pt = {
   closing: 'O serviço está sendo recarregado. Tente novamente em instantes.',
   transport: 'Não foi possível confirmar o resultado. Atualize e tente novamente.',
 } satisfies Record<RecommendationKey, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  heading: 'Recommended plugin',
+  official: 'Official',
+  detailsFor: 'View details: {title}',
+  'version-error': 'This plugin is incompatible with this DSH version. Update DSH and retry.',
+  'management-error': 'Could not enable the plugin. Open its details to check the error and retry.',
+  enable: 'Enable',
+  dismiss: 'الان نه',
+  working: 'Working…',
+  scope: 'Available in all conversations when enabled',
+  enabled: 'Enabled',
+  'already-enabled': 'Already selected in Plugins. Open details to check its runtime status.',
+  dismissed: 'Dismissed',
+  replaced: 'Replaced',
+  'restart-required': 'Saved. Restart DSH to apply.',
+  failed: 'Could not enable. Retry or check Plugins.',
+  retry: 'Retry enabling',
+  unconfirmed: 'Could not confirm whether the plugin was enabled. Retry to check.',
+  'lookup-failed': 'Could not load this plugin’s details. Try again.',
+  retryLookup: 'Try again',
+  unavailable: 'This plugin cannot be enabled now. Check Plugins.',
+  unknown: 'This recommendation is unavailable. Reopen the conversation.',
+  'access-denied': 'You do not have permission to change this profile.',
+  'not-live-root': 'Use this recommendation in its original conversation.',
+  closing: 'The service is reloading. Try again shortly.',
+  transport: 'Could not confirm the result. Refresh and try again.',
+
+} satisfies Record<keyof typeof en, string>

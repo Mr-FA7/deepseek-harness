@@ -40,13 +40,18 @@ export const pt = {
   escalation: (mode: string, justification: string): string => `Permitir esta operação com permissões ${mode}: ${justification}`,
 } satisfies typeof en
 
+/** Persian escalation messages. */
+export const fa = {
+  escalation: (mode: string, justification: string): string => `اجازه این عملیات با مجوزهای ${mode}: ${justification}`,
+} satisfies typeof en
+
 /**
  * Build translations for the existing Client localized-text resolver.
  * @param mode - requested sandbox mode.
  * @param justification - raw model justification, preserved in every translation.
  * @returns localized approval text.
  */
-export function escalationDisplayReason(mode: string, justification: string): Record<'en' | 'zh' | 'ja' | 'es' | 'fr' | 'de' | 'ru' | 'pt', string> {
+export function escalationDisplayReason(mode: string, justification: string): Record<'en' | 'zh' | 'ja' | 'es' | 'fr' | 'de' | 'ru' | 'pt' | 'fa', string> {
   return {
     en: en.escalation(mode, justification),
     zh: zh.escalation(mode, justification),
@@ -56,5 +61,6 @@ export function escalationDisplayReason(mode: string, justification: string): Re
     de: de.escalation(mode, justification),
     ru: ru.escalation(mode, justification),
     pt: pt.escalation(mode, justification),
+    fa: fa.escalation(mode, justification),
   }
 }

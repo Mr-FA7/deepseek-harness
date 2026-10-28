@@ -12,5 +12,7 @@ export type UserMessageBubbleProps = ComponentPropsWithoutRef<'div'>
  * @returns A theme-aware message surface that wraps its content.
  */
 export function UserMessageBubble({ className, ...props }: UserMessageBubbleProps) {
-  return <div {...props} className={clsx(css.bubble, className)} />
+  // dir=auto follows the first strong letter, so a Persian bubble is RTL and an
+  // English one stays LTR. Callers can still override dir.
+  return <div dir="auto" {...props} className={clsx(css.bubble, className)} />
 }

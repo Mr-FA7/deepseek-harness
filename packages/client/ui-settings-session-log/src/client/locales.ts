@@ -61,3 +61,12 @@ export const pt = {
   saved: 'Preferência salva',
   failed: 'Não foi possível salvar a preferência',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  title: 'Upload Session Log when using the official model API',
+  description: 'Help improve DeepSeek models and products.',
+  saved: 'Preference saved',
+  failed: 'Could not save preference',
+
+} satisfies Record<keyof typeof en, string>

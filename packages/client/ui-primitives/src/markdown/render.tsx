@@ -309,12 +309,12 @@ function renderNode(node: Md.RootContent, key: Key, context: MarkdownRenderConte
     case 'text':
       return node.value
     case 'paragraph':
-      return <p key={key}>{renderChildren(node.children, context)}</p>
+      return <p key={key} dir="auto">{renderChildren(node.children, context)}</p>
     case 'heading':
-      return createElement(`h${node.depth}`, { key }, ...renderChildren(node.children, context))
+      return createElement(`h${node.depth}`, { key, dir: 'auto' }, ...renderChildren(node.children, context))
     case 'blockquote':
       return (
-        <blockquote key={key}>
+        <blockquote key={key} dir="auto">
           {wrapBlockChildren(
             renderChildren(node.children, { ...context, inBlockquote: true }).filter(child => child !== null),
             true,
@@ -341,14 +341,14 @@ function renderNode(node: Md.RootContent, key: Key, context: MarkdownRenderConte
       // authored text, not a parsed destination, so no normalizeUri: port,
       // path, and query render unchanged.
       const href = inlineCodeHttpUrl(value)
-      if (href !== undefined) return <code key={key}>{renderSafeLink(href, [value], 'link')}</code>
+      if (href !== undefined) return <code key={key} dir="ltr">{renderSafeLink(href, [value], 'link')}</code>
       // A token the owner's file-mention vocabulary recognizes opens that
       // file; the resolver, not this renderer, decides what names a file.
       // Inside an anchor the token stays inert — a button cannot nest there.
       const mention = context.inLink === true ? undefined : context.fileMentions?.resolve(value)
       if (mention !== undefined) {
         return (
-          <code key={key}>
+          <code key={key} dir="ltr">
             <button
               type="button"
               className={css.fileMention}
@@ -362,7 +362,7 @@ function renderNode(node: Md.RootContent, key: Key, context: MarkdownRenderConte
           </code>
         )
       }
-      return <code key={key}>{value}</code>
+      return <code key={key} dir="ltr">{value}</code>
     }
     case 'html':
       // No HTML parser enters the pipeline: raw HTML is literal text, or nothing where the owner omits it.
@@ -411,7 +411,7 @@ function renderCode(node: Md.Code, key: Key, context: MarkdownRenderContext): Re
   if (node.value === '') {
     // Parity: the replaced pipeline kept the stock <pre> for an empty fence.
     return (
-      <pre key={key}>
+      <pre key={key} dir="ltr">
         <code className={language === undefined ? undefined : `language-${language}`} />
       </pre>
     )
@@ -494,13 +494,13 @@ function renderListItem(
     const isParagraph = 'paragraph' in entry
     if (loose || index !== 0 || !isParagraph) parts.push('\n')
     if (!isParagraph) parts.push(entry.element)
-    else if (loose) parts.push(<p key={`p-${index}`}>{entry.paragraph}</p>)
+    else if (loose) parts.push(<p key={`p-${index}`} dir="auto">{entry.paragraph}</p>)
     else parts.push(<Fragment key={`p-${index}`}>{entry.paragraph}</Fragment>)
   }
   const tail = entries[entries.length - 1]
   if (tail !== undefined && (loose || !('paragraph' in tail))) parts.push('\n')
   return (
-    <li key={key} className={task ? 'task-list-item' : undefined}>
+    <li key={key} dir="auto" className={task ? 'task-list-item' : undefined}>
       {parts}
     </li>
   )
@@ -556,7 +556,7 @@ function renderTableRow(
       cellTag,
       // hast-util-to-jsx-runtime's default tableCellAlignToStyle turned the
       // deprecated align attribute into an inline style; keep that DOM.
-      { key: index, style: alignValue == null ? undefined : { textAlign: alignValue } },
+      { key: index, dir: 'auto', style: alignValue == null ? undefined : { textAlign: alignValue } },
       ...(cell === undefined ? [] : renderChildren(cell.children, context)),
     ))
   }
@@ -782,7 +782,7 @@ export function renderFootnoteSection(context: MarkdownRenderContext): ReactNode
     const body: ReactNode[] = entries.map((entry, index) => (
       'paragraph' in entry
         ? (
-          <p key={`p-${index}`}>
+          <p key={`p-${index}`} dir="auto">
             {entry.paragraph}
             {entry === tail && <>{' '}{backrefs}</>}
           </p>

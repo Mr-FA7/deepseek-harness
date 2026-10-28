@@ -28,3 +28,7 @@ declare module '@deepseek-ai/dsh-client-ui-slots' {
     fileDrag: keyof typeof zh
   }
 }
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = { failed: 'Drag failed. Try again.' 
+} satisfies Record<keyof typeof en, string>

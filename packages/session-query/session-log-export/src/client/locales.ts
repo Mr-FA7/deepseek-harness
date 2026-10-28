@@ -147,3 +147,21 @@ export const pt = {
   'dialog.close': 'Fechar',
   'dialog.commandFailed': 'Não foi possível iniciar a exportação da sessão.',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'header.more': 'More actions',
+  'menu.copyMarkdown': 'Copy Session as Markdown',
+  'menu.download': 'Download session log',
+  'menu.feedback': 'Feedback',
+  'toast.copied': 'Session copied as Markdown.',
+  'toast.preparationFailed': 'Could not read the Session for copying. Try again.',
+  'toast.clipboardFailed': 'Could not write to the clipboard. Check clipboard permission and try again.',
+  'dialog.preparingTitle': 'Exporting Session',
+  'dialog.preparingDescription': 'Preparing a ZIP containing this Session, its sub-Sessions, and attachments.',
+  'dialog.successTitle': 'Session download started',
+  'dialog.successDescription': 'The browser is downloading the Session ZIP.',
+  'dialog.errorTitle': 'Session export failed',
+  'dialog.close': 'Close',
+  'dialog.commandFailed': 'Could not start the Session export.',
+} satisfies Record<keyof typeof en, string>

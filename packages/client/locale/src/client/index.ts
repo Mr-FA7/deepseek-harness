@@ -20,9 +20,9 @@ import {
   LOCALE_ID_PATTERN, LOCALE_IDS, LOCALE_PREFERENCE_FIELD, LOCALE_SETTINGS_NAMESPACE,
   type BuiltInLocaleId, type LocaleId, type LocaleSettings,
 } from '../locale-settings.ts'
-import { en, ja, es, fr, de, ru, pt, zh, type CommonKey } from '../locales/index.ts'
+import { en, fa, ja, es, fr, de, ru, pt, zh, type CommonKey } from '../locales/index.ts'
 import {
-  en as settingsEn, ja as settingsJa, es as settingsEs, fr as settingsFr,
+  en as settingsEn, fa as settingsFa, ja as settingsJa, es as settingsEs, fr as settingsFr,
   de as settingsDe, ru as settingsRu, pt as settingsPt, zh as settingsZh, type SettingsLocaleKey,
 } from '../locales/settings.ts'
 import type { LanguageRowInjected } from './LanguageRow.tsx'
@@ -146,11 +146,32 @@ function normalizeLanguage(input: LanguageRegistration): Readonly<LanguageRegist
  * sync with locale snapshot changes.
  * @param snapshot - current locale state, including the active definition.
  */
+/** Primary language subtags whose UI mirrors to right-to-left. */
+const RTL_PRIMARY = new Set(['ar', 'fa', 'he', 'ps', 'ur'])
+
+/** BCP 47 tag written to `<html lang>`. Bare `zh` is ambiguous for fonts. */
+function documentLanguageTag(active: string): string {
+  return active === 'zh' ? 'zh-CN' : active
+}
+
+/**
+ * Document direction for the active locale. Chat prose still chooses its own
+ * direction per paragraph, so an English message stays left-to-right inside
+ * a Persian shell and a Persian message stays right-to-left inside an English one.
+ */
+function documentDirection(active: string): 'rtl' | 'ltr' {
+  const primary = active.toLowerCase().split('-')[0] ?? ''
+  return RTL_PRIMARY.has(primary) ? 'rtl' : 'ltr'
+}
+
 function syncDocumentLanguage(snapshot: LocaleSnapshot): void {
   // Non-browser runs (node boots of the client tree) have no document.
   if (typeof document === 'undefined') return
-  const language = snapshot.active === 'zh' ? 'zh-CN' : snapshot.active
-  if (document.documentElement.lang !== language) document.documentElement.lang = language
+  const root = document.documentElement
+  const language = documentLanguageTag(snapshot.active)
+  const direction = documentDirection(snapshot.active)
+  if (root.lang !== language) root.lang = language
+  if (root.dir !== direction) root.dir = direction
 }
 
 /**
@@ -580,11 +601,11 @@ export async function apply(ctx: ClientContext): Promise<void> {
   }
   const host = ctx.configForms.get<LocaleSettings>(LOCALE_SETTINGS_NAMESPACE)
   const locale = new LocaleRuntime(ctx, host, bootstrap)
-  for (const [id, label] of [['ja', '日本語'], ['es', 'Español'], ['fr', 'Français'], ['de', 'Deutsch'], ['ru', 'Русский'], ['pt', 'Português']] as const) {
+  for (const [id, label] of [['ja', '日本語'], ['es', 'Español'], ['fr', 'Français'], ['de', 'Deutsch'], ['ru', 'Русский'], ['pt', 'Português'], ['fa', 'فارسی']] as const) {
     ctx.effect(() => locale.addLanguage({ id, label, fallback: 'en' }), `locale: ${id} language`)
   }
-  ctx.effect(() => locale.register(COMMON_NS, { zh, en, ja, es, fr, de, ru, pt }), 'locale: common dictionaries')
-  ctx.effect(() => locale.register(SETTINGS_NS, { zh: settingsZh, en: settingsEn, ja: settingsJa, es: settingsEs, fr: settingsFr, de: settingsDe, ru: settingsRu, pt: settingsPt }), 'locale: settings dictionaries')
+  ctx.effect(() => locale.register(COMMON_NS, { zh, en, ja, es, fr, de, ru, pt, fa }), 'locale: common dictionaries')
+  ctx.effect(() => locale.register(SETTINGS_NS, { zh: settingsZh, en: settingsEn, ja: settingsJa, es: settingsEs, fr: settingsFr, de: settingsDe, ru: settingsRu, pt: settingsPt, fa: settingsFa }), 'locale: settings dictionaries')
   ctx.provide('locale', locale)
   if (bridge !== undefined) {
     ctx.on('locale/change', (snapshot) => { bridge.onChange(snapshot.active) })

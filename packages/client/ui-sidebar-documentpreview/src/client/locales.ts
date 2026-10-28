@@ -216,3 +216,30 @@ export const pt = {
   'error.unavailable': 'Falha na leitura: {message}',
   retry: 'Tentar novamente',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  loading: 'Rendering document...',
+  loadMore: 'Load more',
+  changed: 'The file has changed, showing the previous content.',
+  reloadNow: 'بارگذاری مجدد',
+  reload: 'Read the file again',
+  autoRefresh: 'Auto refresh',
+  'autoRefresh.enable': 'Enable auto refresh',
+  'autoRefresh.disable': 'Disable auto refresh',
+  'wrap.enable': 'Turn on line wrap',
+  'wrap.disable': 'Turn off line wrap',
+  'wrap.aria': 'Line wrap',
+  openWith: 'Open with',
+  'viewer.text': 'Plain text',
+  resourceUnavailable: 'The file resource service is unavailable.',
+  rendererUnavailable: 'The {name} preview is unavailable.',
+  unsupportedFile: 'Preview is not available for this file type yet.',
+  'error.notFound': 'File not found. It may have been moved or deleted.',
+  'error.tooLarge': 'This page exceeds the {limit} limit and cannot be read.',
+  'error.notText': 'Preview is not available for this file type yet.',
+  'error.notRegularFile': 'Not a regular file, nothing to display.',
+  'error.unavailable': 'Read failed: {message}',
+  retry: 'تلاش دوباره',
+
+} satisfies Record<keyof typeof en, string>

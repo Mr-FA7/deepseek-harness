@@ -54,6 +54,7 @@ describe('document language', () => {
     // The served markup declares the product default; the plugin must not
     // depend on that value already being correct.
     document.documentElement.lang = 'en'
+    document.documentElement.dir = ''
     Object.defineProperty(navigator, 'languages', { value: ['zh-CN'], configurable: true })
     Object.defineProperty(navigator, 'language', { value: 'zh-CN', configurable: true })
   })
@@ -89,6 +90,16 @@ describe('document language', () => {
     const { locale } = await bench('en')
     await vi.waitFor(() => { expect(locale.getLocale().active).toBe('en') })
     await vi.waitFor(() => { expect(langOf()).toBe('en') })
+  })
+
+  it('mirrors the document for Persian and restores ltr for other locales', async () => {
+    const { locale } = await bench()
+    expect(document.documentElement.dir).toBe('ltr')
+    locale.setLocale('fa')
+    expect(langOf()).toBe('fa')
+    expect(document.documentElement.dir).toBe('rtl')
+    locale.setLocale('en')
+    expect(document.documentElement.dir).toBe('ltr')
   })
 
   it('uses an external locale definition for the document language', async () => {

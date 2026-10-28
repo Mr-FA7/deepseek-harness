@@ -172,3 +172,23 @@ export const pt = {
   'time.months': '{n} mês',
   'time.years': '{n}s',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'section.files': 'Files & folders',
+  'section.subagents': 'Subagents',
+  'section.sessions': 'جلسه‌ها',
+  'candidate.noCwd': '(no cwd)',
+  'crumb.root': 'Workspace',
+  'fileOpen.title': 'فایل باز نشد',
+  'fileOpen.failed': 'Couldn’t open “{path}”. Try again or close this message.',
+  'fileOpen.close': 'بستن',
+  'fileOpen.retry': 'تلاش دوباره',
+  'time.now': 'الان',
+  'time.minutes': '{n}د',
+  'time.hours': '{n}س',
+  'time.days': '{n}ر',
+  'time.months': '{n}ما',
+  'time.years': '{n}س',
+
+} satisfies Record<keyof typeof en, string>

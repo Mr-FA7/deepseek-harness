@@ -206,7 +206,7 @@ export const MarkdownText = memo(function MarkdownText({
     }
     return streamRef.current.render(text)
   }, [text, streaming, labels, fileMentions, pathImages, omitHtml])
-  return <div className={clsx(css.markdown, variant === 'compact' && css.compact)}
+  return <div dir="auto" className={clsx(css.markdown, variant === 'compact' && css.compact)}
     data-text-interaction-source={textInteractionSource ? '' : undefined}
     data-markdown-variant={variant === 'compact' ? variant : undefined}>{children}</div>
 })

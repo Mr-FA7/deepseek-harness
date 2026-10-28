@@ -9,7 +9,7 @@ English | [中文](README.zh.md)
 
 ## Summary
 
-Use `dsh-client-locale` to switch the web GUI between the shipped English, Chinese, Japanese, Spanish, French, German, Russian, and Brazilian Portuguese (`pt`, including `pt-PT` browser requests) locales or languages added by client plugins. User selections take effect immediately; every authenticated browser persists them as `locale.preference` in `$DSH_HOME/cordis.patch.yml` through the Host settings service. New browsers use the first supported language requested by the browser until the Host read delivers a stored preference. Plugin authors add typed namespace dictionaries and translate through the public locale API; slot-rendered copy updates without a reload.
+Use `dsh-client-locale` to switch the web GUI between the shipped English, Chinese, Japanese, Spanish, French, German, Russian, Brazilian Portuguese (`pt`, including `pt-PT` browser requests), and Persian (`fa`, right-to-left) locales or languages added by client plugins. User selections take effect immediately; every authenticated browser persists them as `locale.preference` in `$DSH_HOME/cordis.patch.yml` through the Host settings service. New browsers use the first supported language requested by the browser until the Host read delivers a stored preference. Plugin authors add typed namespace dictionaries and translate through the public locale API; slot-rendered copy updates without a reload.
 
 ## Table of Contents
 
@@ -137,7 +137,7 @@ None; this package neither assembles nor sends a provider request.
 These limits define where localization is incomplete or frozen at registration time. They are current package constraints, not a task backlog.
 
 - **Registry-held text reads its translation once** — copy captured at registration time outside the slot render path (e.g. the `/model` command description in the command registry) keeps the language it was registered under until re-registration; slot-rendered copy follows switches live.
-- **Language packs own language-specific behavior** — the registry supplies selection, persistence, browser matching, key fallback, and `<html lang>`; it does not add plural rules or bidirectional layout.
+- **Language packs own language-specific behavior** — the registry supplies selection, persistence, browser matching, key fallback, `<html lang>`, and `<html dir>` for right-to-left locales such as Persian; it does not add plural rules.
 
 <a id="dev-note"></a>
 ### Dev Note

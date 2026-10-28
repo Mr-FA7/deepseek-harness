@@ -76,3 +76,13 @@ export const pt = {
   resize: 'Redimensionar painel do inspetor NodeJS',
   frameTitle: 'NodeJS inspetor',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  title: 'NodeJS inspector',
+  toggle: 'Toggle NodeJS inspector',
+  close: 'جمع کردن',
+  resize: 'Resize NodeJS inspector panel',
+  frameTitle: 'NodeJS inspector',
+
+} satisfies Record<keyof typeof en, string>

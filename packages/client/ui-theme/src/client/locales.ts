@@ -234,3 +234,33 @@ export const pt = {
   'fontFamily.placeholder': 'Padrão',
   'fontSize.more': 'Mais configurações de fonte',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'appearance.title': 'ظاهر',
+  'appearance.light': 'روشن',
+  'appearance.dark': 'تیره',
+  'appearance.system': 'سیستم',
+  'fontSize.text.title': 'اندازه قلم',
+  'fontSize.text.description': 'فقط روی محتوای گفتگو اثر می‌گذارد',
+  'fontSize.text.increase': 'بزرگ‌تر کردن اندازه قلم',
+  'fontSize.text.decrease': 'کوچک‌تر کردن اندازه قلم',
+  'fontSize.code.title': 'اندازه قلم کد',
+  'fontSize.code.description': 'برای بلوک‌های کد، کد درون‌خطی و خروجی ابزار استفاده می‌شود',
+  'fontSize.code.increase': 'بزرگ‌تر کردن اندازه قلم کد',
+  'fontSize.code.decrease': 'کوچک‌تر کردن اندازه قلم کد',
+  'fontSize.terminal.title': 'اندازه قلم ترمینال',
+  'fontSize.terminal.description': 'برای ترمینال نوار کناری استفاده می‌شود',
+  'fontSize.terminal.increase': 'بزرگ‌تر کردن اندازه قلم ترمینال',
+  'fontSize.terminal.decrease': 'کوچک‌تر کردن اندازه قلم ترمینال',
+  'fontSize.unit': 'px',
+  'fontFamily.text.title': 'قلم متن',
+  'fontFamily.text.description': 'برای رابط و متن گفتگو. قلم‌ها را با ویرگول جدا کنید؛ برای پیش‌فرض خالی بگذارید',
+  'fontFamily.code.title': 'قلم کد',
+  'fontFamily.code.description': 'برای بلوک‌های کد، کد درون‌خطی و خروجی ابزار. قلم‌ها را با ویرگول جدا کنید؛ برای پیش‌فرض خالی بگذارید',
+  'fontFamily.terminal.title': 'قلم ترمینال',
+  'fontFamily.terminal.description': 'برای ترمینال نوار کناری. قلم‌ها را با ویرگول جدا کنید؛ برای پیش‌فرض خالی بگذارید',
+  'fontFamily.placeholder': 'پیش‌فرض',
+  'fontSize.more': 'تنظیمات بیشتر قلم',
+
+} satisfies Record<keyof typeof en, string>

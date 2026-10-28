@@ -9,6 +9,7 @@
 }
 
 .refChip {
+  unicode-bidi: isolate;
   /* Plain inline, NOT inline-flex: a flex container takes its baseline from
      its first flex item — the icon svg, which has no text baseline — so the
      chip's label rode ~3px above the surrounding text in both surfaces. An
@@ -39,7 +40,7 @@
 .refIcon {
   width: 1em;
   height: 1em;
-  margin-right: 4px;
+  margin-inline-end: 4px;
   /* Optical centering against the text: drops the glyph below the baseline by
      a font-relative amount, so it holds across the font axis. */
   vertical-align: -0.125em;

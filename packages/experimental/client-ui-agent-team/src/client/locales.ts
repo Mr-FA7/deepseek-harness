@@ -237,3 +237,33 @@ export const pt = {
   'status.in_progress': 'Em andamento',
   'status.completed': 'Concluído',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  trigger: 'Agent team',
+  loading: 'Loading team…',
+  unavailable: 'Team is unavailable',
+  failure: 'Invalid persisted team record: {message}',
+  empty: 'No shared tasks yet. Create them through the conversation.',
+  roster: 'Members',
+  tasks: 'Shared tasks',
+  model: 'مدل',
+  open: 'Open member conversation',
+  current: 'Current chat',
+  owner: 'Owner',
+  unowned: 'Unowned',
+  blockedBy: 'Blocked by',
+  writeScopes: 'Write scopes',
+  ready: 'Ready',
+  blocked: 'Blocked by dependencies',
+  'task.expand': 'Show more',
+  'task.collapse': 'نمایش کمتر',
+  'memberStatus.running': 'در حال اجرا',
+  'memberStatus.inactive': 'Inactive',
+  'memberStatus.provisioning': 'Provisioning',
+  'memberStatus.failed': 'ناموفق',
+  'status.pending': 'در انتظار',
+  'status.in_progress': 'در حال انجام',
+  'status.completed': 'تکمیل شد',
+
+} satisfies Record<keyof typeof en, string>

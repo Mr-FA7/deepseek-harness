@@ -121,3 +121,18 @@ export const pt = {
   unsupported: 'A visualização do PDF requer o conteúdo completo do arquivo.',
   retry: 'Tentar novamente',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  ...zoomEn,
+  title: 'PDF',
+  pageImage: 'PDF page {page}',
+  loading: 'Rendering document...',
+  rendering: 'Rendering page…',
+  failed: 'Cannot display PDF: {message}',
+  password: 'This PDF requires a password; password-protected previews are not supported.',
+  workerFailed: 'The PDF rendering process could not continue. Please retry.',
+  unsupported: 'PDF preview requires the complete file contents.',
+  retry: 'تلاش دوباره',
+
+} satisfies Record<keyof typeof en, string>

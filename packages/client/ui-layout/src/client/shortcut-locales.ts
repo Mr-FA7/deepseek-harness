@@ -22,3 +22,7 @@ export const ru = { toggle: 'Переключить левую боковую п
 
 /** Portuguese dictionary, checked against the English keys. */
 export const pt = { toggle: 'Alternar barra lateral esquerda' } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = { toggle: 'Toggle left sidebar' 
+} satisfies Record<keyof typeof en, string>

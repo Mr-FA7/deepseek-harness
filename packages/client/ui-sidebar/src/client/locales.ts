@@ -90,3 +90,15 @@ export const pt = {
   'panels.more': 'Mais',
   'version.copied': 'Versão copiada',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'session.new': 'جلسه جدید',
+  'session.new.label': 'جلسه جدید',
+  'toggle.open': 'باز کردن نوار کناری',
+  'toggle.collapse': 'جمع کردن نوار کناری',
+  'panels.label': 'پنل‌های سراسری',
+  'panels.more': 'بیشتر',
+  'version.copied': 'نسخه کپی شد',
+
+} satisfies Record<keyof typeof en, string>

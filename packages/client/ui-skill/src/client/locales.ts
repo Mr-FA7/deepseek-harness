@@ -101,3 +101,16 @@ export const pt = {
   'row.inspect': 'Inspecionar',
   'menu.userOnly': 'somente usuário',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'row.title': 'Skill',
+  'row.running': 'Loading skill',
+  'row.preparing': 'Preparing to load a skill',
+  'row.failed': 'Skill load failed',
+  'row.stopped': 'Skill load stopped',
+  'row.instructions': 'Instructions',
+  'row.inspect': 'Inspect',
+  'menu.userOnly': 'user-only',
+
+} satisfies Record<keyof typeof en, string>

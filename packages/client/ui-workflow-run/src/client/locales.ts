@@ -181,3 +181,26 @@ export const pt = {
   'status.cancelled': 'Cancelado',
   'status.interrupted': 'Interrompido',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'run.title': '{name}',
+  'run.members.one': '{count} member',
+  'run.members.other': '{count} members',
+  'run.empty': 'No members started',
+  'phase.unassigned': 'Unphased',
+  'phase.empty': 'Empty phase name',
+  'statusCount.running': 'Running {count}',
+  'statusCount.completed': 'Completed {count}',
+  'statusCount.failed': 'Failed {count}',
+  'statusCount.cancelled': 'Cancelled {count}',
+  'statusCount.interrupted': 'Interrupted {count}',
+  'member.empty': 'Empty member name',
+  'member.open': 'Open {name}',
+  'status.running': 'در حال اجرا',
+  'status.completed': 'تکمیل شد',
+  'status.failed': 'ناموفق',
+  'status.cancelled': 'Cancelled',
+  'status.interrupted': 'Interrupted',
+
+} satisfies Record<keyof typeof en, string>

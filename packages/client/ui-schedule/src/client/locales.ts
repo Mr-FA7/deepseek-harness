@@ -177,3 +177,25 @@ export const pt = {
   'mark.aria': '{count} tarefas agendadas',
   'hover.more': '{count} mais',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'trigger.label': 'Reminders',
+  'list.loading': 'Loading reminders…',
+  'list.error': 'Could not load reminders.',
+  'list.retry': 'تلاش دوباره',
+  'delete.action': 'حذف',
+  'delete.pending': 'Deleting…',
+  'delete.label': 'Delete reminder: {title}',
+  'list.open': 'Open reminder details: {title}',
+  'trigger.one': '{count} reminder',
+  'trigger.other': '{count} یادآور',
+  'list.aria': 'Active reminders',
+  'list.nextRun': 'Next run',
+  'frequency.once': 'یک‌بار',
+  'frequency.every': 'Every {value} {unit}',
+  ...frequencyEn,
+  'mark.aria': '{count} scheduled tasks',
+  'hover.more': '{count} more',
+
+} satisfies Record<keyof typeof en, string>

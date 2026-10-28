@@ -71,3 +71,12 @@ export const pt = {
   'code.copied': 'Copiado',
   'footnotes': 'Notas de rodapé',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  'viewer.label': 'Markdown',
+  'code.copy': 'کپی',
+  'code.copied': 'کپی شد',
+  'footnotes': 'Footnotes',
+
+} satisfies Record<keyof typeof en, string>

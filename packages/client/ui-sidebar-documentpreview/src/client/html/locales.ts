@@ -71,3 +71,12 @@ export const pt = {
   loading: 'Renderizando documento...',
   failed: 'Este documento HTML não pôde ser visualizado.',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  title: 'HTML',
+  frame: 'HTML document preview',
+  loading: 'Rendering document...',
+  failed: 'This HTML document could not be previewed.',
+
+} satisfies Record<keyof typeof en, string>

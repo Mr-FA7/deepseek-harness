@@ -74,3 +74,13 @@ export const pt = {
   tabs: 'Visualizações de plug-in',
   empty: 'Esta implantação não expõe visualizações de plug-ins.',
 } satisfies Record<keyof typeof en, string>
+
+/** Persian dictionary, checked against the English keys. */
+export const fa = {
+  nav: 'Built-in plugins',
+  title: 'Built-in plugins',
+  intro: 'Inspect the plugins this deployment ships.',
+  tabs: 'Plugin views',
+  empty: 'This deployment exposes no plugin views.',
+
+} satisfies Record<keyof typeof en, string>
